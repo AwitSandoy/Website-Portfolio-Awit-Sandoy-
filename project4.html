@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 4 - Awit Sandoy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #5d4037;
+            margin: 0;
+            padding: 20px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            color: #008080;
+            border-bottom: 2px solid #8d6e63;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            background-color: #ffffff;
+            border: 2px solid #008080;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"], select {
+            border: 1px solid #8d6e63;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        button[type="submit"] {
+            background-color: #008080;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #006666;
+        }
+
+        button[type="reset"] {
+            background-color: #8d6e63;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #5d4037;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>User Information Form</h2>
+
+    <form>
+        <table>
+            <tr>
+                <td><label for="fname">First Name:</label></td>
+                <td><input type="text" id="fname" name="firstname" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="lname">Last Name:</label></td>
+                <td><input type="text" id="lname" name="lastname" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="age">Age:</label></td>
+                <td><input type="number" id="age" name="age" required></td>
+            </tr>
+
+            <tr>
+                <td><label>Gender:</label></td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="vertical-align: top;"><label>Hobbies:</label></td>
+                <td>
+                    <input type="checkbox" id="hobby1" name="hobby" value="reading">
+                    <label for="hobby1">Reading</label><br>
+                    <input type="checkbox" id="hobby2" name="hobby" value="traveling">
+                    <label for="hobby2">Traveling</label><br>
+                    <input type="checkbox" id="hobby3" name="hobby" value="gaming">
+                    <label for="hobby3">Gaming</label><br>
+                    <input type="checkbox" id="hobby4" name="hobby" value="cooking">
+                    <label for="hobby4">Cooking</label><br>
+                    <input type="checkbox" id="hobby5" name="hobby" value="sports">
+                    <label for="hobby5">Sports</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="year-level">Year Level:</label></td>
+                <td>
+                    <select id="year-level" name="year_level">
+                        <option value="1st-year">1st Year</option>
+                        <option value="2nd-year">2nd Year</option>
+                        <option value="3rd-year">3rd Year</option>
+                        <option value="4th-year">4th Year</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

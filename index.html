@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awit Sandoy | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6495ED; /* Cornflower Blue */
+            --primary-dark: #4a76c5;
+            --accent: #FF7F50; 
+            --bg-light: #f0f4ff;
+            --text-dark: #2d3436;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Background Details --- */
+        .blob {
+            position: fixed;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: move 20s infinite alternate;
+        }
+        .blob-1 { width: 400px; height: 400px; background: var(--primary); top: -100px; right: -100px; border-radius: 30% 70% 70% 30%; }
+        .blob-2 { width: 300px; height: 300px; background: var(--accent); bottom: -50px; left: -50px; border-radius: 50% 20% 30% 80%; }
+
+        @keyframes move {
+            from { transform: translate(0, 0); }
+            to { transform: translate(50px, 100px); }
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 10%;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr; /* Logic for centering titles */
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary-dark); text-decoration: none; font-weight: bold; grid-column: 1; }
+        
+        .nav-links { grid-column: 2; display: flex; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- Layout --- */
+        section { padding: 120px 10%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 2rem; position: relative; }
+        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 60px; height: 5px; background: var(--primary); border-radius: 10px; }
+
+        /* --- Home Section --- */
+        #home { display: flex; flex-direction: row; align-items: center; gap: 4rem; }
+        
+        .hero-img-container { 
+            flex: 1; 
+            display: flex; 
+            justify-content: center;
+        }
+
+        .hero-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            border-radius: 20px; 
+            border: 10px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .hero-content { flex: 1.5; }
+        .hero-content h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; }
+        .skills-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.5rem; }
+        .skill-tag { background: white; padding: 8px 16px; border-radius: 50px; border: 1px solid var(--primary); font-size: 0.9rem; color: var(--primary-dark); }
+
+        /* --- Portfolio Section --- */
+        #portfolio { background: rgba(255,255,255,0.3); }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(100, 149, 237, 0.2);
+            text-decoration: none;
+            color: inherit;
+        }
+        .project-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .project-thumb {
+            width: 100%;
+            height: 150px;
+            background: var(--bg-light);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the title and container horizontally */
+            text-align: center;
+        }
+
+        .contact-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto; /* Centers the box itself */
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(100, 149, 237, 0.15);
+            text-align: left; /* Keeps form labels/inputs left-aligned inside the centered box */
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical; 
+            max-height: 300px;
+        }
+
+/* three codes above are added to replace asingle old one below */
+
+        /* .contact-container {
+            max-width: 600px;
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(100, 149, 237, 0.15);
+        } */
+
+        /* input, textarea {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-family: inherit;
+        } */
+
+        /* .btn-group { display: flex; gap: 1rem; } */
+        .btn-group { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+            gap: 1rem; 
+            width: 100%;
+        }
+
+        button {
+            padding: 12px 0; /* originally 12px and 30px */
+            width: 100%;    /* Ensures button fills its 1fr grid cell */
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        /* .btn-submit { background: var(--primary); color: white; flex: 2; }
+        .btn-clear { background: #eee; flex: 1; } */
+
+        .btn-submit { 
+            background: var(--primary); 
+            color: white; 
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-clear { 
+            background: #eee; 
+            color: var(--text-dark);
+        }
+
+        .btn-clear:hover {
+            background: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            nav { display: flex; flex-direction: column; gap: 1rem; }
+            #home { flex-direction: column; text-align: center; }
+            .section-title::after { left: 50%; transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav>
+        <a href="#" class="logo">Awit Sandoy</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div style="width: 100px; visibility: hidden;" class="nav-spacer"></div>
+    </nav>
+
+    <section id="home">
+        <div class="hero-img-container">
+            <img src="Profile_Picture.jpeg" alt="Profile Photo" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <h1>Hi, I'm <b><u>Awit Sandoy</u></b> and welcome to <br><span style="color: var(--primary);">My Portfolio Website.</span></h1>
+            
+            <p style="font-size: 0.95rem; color: #7f8c8d; margin-top: 10px; margin-bottom: 5px; font-weight: 300;">
+                Punta Princesa, Cebu City, Philippines, 6000
+            </p>
+            
+            <p style="font-size: 0.95rem; color: #7f8c8d; margin-bottom: 20px; font-weight: 300;">
+                (+63) 911 420 1738 &nbsp;&bull;&nbsp; awit.sandoy@gmail.com
+            </p>
+            
+            <p>I am a student developer focused on clean coding and beautiful, smooth user interfaces.</p>
+            
+            <div class="skills-list">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 class="section-title">My Projects</h2>
+        <div class="portfolio-grid">
+            
+            <a href="project1.html" target="_blank" class="project-card">
+                <div class="project-thumb">
+                    <img src="project1_preview.png" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                </div>
+                <h3>Personal Profile</h3>
+                <p>A concise personal introduction page that highlights my background, hobbies, and interests.</p>
+            </a>
+
+            <a href="project2.html" target="_blank" class="project-card">
+                <div class="project-thumb">
+                    <img src="project2_preview.png" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                </div>
+                <h3>List and Data Nesting</h3>
+                <p>An exercise in the implementation of ordered lists, unordered lists, and nested list items to organize preferences and travel goals.</p>
+            </a>
+
+            <a href="project3.html" target="_blank" class="project-card">
+                <div class="project-thumb">
+                    <img src="project3_preview.png" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                </div>
+                <h3>Table-Based Image Gallery</h3>
+                <p>This activity demonstrates how to align media elements and captions within table cells for a balanced visual layout.</p>
+            </a>
+
+            <a href="project4.html" target="_blank" class="project-card">
+                <div class="project-thumb">
+                    <img src="project4_preview.png" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                </div>
+                <h3>User Data Collection Form</h3>
+                <p>Implementation of various input types including text, number, radio buttons, checkboxes, and drop-down menus.</p>
+            </a>
+
+            <a href="project5-6.html" target="_blank" class="project-card">
+                <div class="project-thumb">
+                    <img src="project5-6_preview.png" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                </div>
+                <h3>Multi-Page Web Layout</h3>
+                <p>This features a navigation system, an integrated sidebar for brand highlights, and a dynamic content area using iframes for seamless browsing.</p>
+            </a>
+
+            <a href="project7.html" target="_blank" class="project-card">
+                <div class="project-thumb">
+                    <img src="project7_preview.png" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                </div>
+                <h3>Date and Time Display</h3>
+                <p>An interface that allows users to fetch the current date and time without refreshing the page.</p>
+            </a>
+
+            <a href="project8.html" target="_blank" class="project-card">
+                <div class="project-thumb">
+                    <img src="project8_preview.png" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                </div>
+                <h3>Notification System</h3>
+                <p>Showcasing a reusable function that processes data and delivers a pop-up greeting to the visitor.</p>
+            </a>
+
+            <a href="project9.html" target="_blank" class="project-card">
+                <div class="project-thumb">
+                    <img src="project9_preview.png" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                </div>
+                <h3>Input Validation and Conditional Logic</h3>
+                <p>Capturing user input, perform a null-check validation, and dynamically update the DOM with personalized strings.</p>
+            </a>
+
+            <a href="project10.html" target="_blank" class="project-card">
+                <div class="project-thumb">
+                    <img src="project10_preview.png" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                </div>
+                <h3>Arithmetic Operations</h3>
+                <p>Calculating the sum, difference, product, quotient, and remainder of any two numerical inputs rounded to two decimal places.</p>
+            </a>
+
+            <a href="project11.html" target="_blank" class="project-card">
+                <div class="project-thumb">
+                    <img src="project11_preview.png" alt="Preview" style="width:100%; height:100%; object-fit:cover; border-radius:15px;">
+                </div>
+                <h3>Loop Structures</h3>
+                <p>Exploring the syntax and use cases of three fundamental loop types: for loop, while loop, and do-while loop.</p>
+            </a>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" placeholder="Subject">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" placeholder="Your Message..."></textarea>
+                </div>
+                <div class="btn-group">
+                    <button type="submit" class="btn-submit">Submit</button>
+                    <button type="button" class="btn-clear" id="clearBtn">Clear</button>
+                </div>
+            </form>
+            <div id="formFeedback" style="margin-top: 1rem; font-weight: bold; display: none;"></div>
+        </div>
+    </section>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const clearBtn = document.getElementById('clearBtn');
+        const feedback = document.getElementById('formFeedback');
+
+        clearBtn.addEventListener('click', () => {
+            contactForm.reset();
+            feedback.style.display = 'none';
+        });
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!email || !subject || !message) {
+                showFeedback("All fields are required.", "red");
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showFeedback("Invalid email format.", "red");
+                return;
+            }
+
+            showFeedback("Sending...", "var(--primary)");
+            
+            setTimeout(() => {
+                console.log("Message details:", { email, subject, message });
+                showFeedback("Success! Your message was sent.", "green");
+                contactForm.reset();
+            }, 1000);
+        });
+
+        function showFeedback(text, color) {
+            feedback.innerText = text;
+            feedback.style.color = color;
+            feedback.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

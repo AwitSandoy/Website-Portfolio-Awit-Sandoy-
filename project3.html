@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3 - Awit Sandoy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 20px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            flex-grow: 1;
+        }
+
+        td {
+            width: 33.33%;
+            text-align: center;
+            vertical-align: top;
+            padding: 10px;
+        }
+
+        .img-container {
+            width: 100%;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .img-container:hover {
+            transform: translateY(-5px);
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; 
+            display: block;
+        }
+
+        .caption {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.2rem;
+            padding-top: 15px;
+            padding-bottom: 30px;
+        }
+
+        table, tr, td {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>
+                <div class="img-container"><img src="BeefWellington.png" alt="Beef Wellington"></div>
+                <div class="caption">Beef Wellington</div>
+            </td>
+            <td>
+                <div class="img-container"><img src="BrunoMars.png" alt="Bruno Mars"></div>
+                <div class="caption">Bruno Mars</div>
+            </td>
+            <td>
+                <div class="img-container"><img src="StevenUniverse.png" alt="Steven Universe"></div>
+                <div class="caption">Steven Universe</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="img-container"><img src="DaftPunk.png" alt="Daft Punk"></div>
+                <div class="caption">Daft Punk</div>
+            </td>
+            <td>
+                <div class="img-container"><img src="Submarine.png" alt="Submarine"></div>
+                <div class="caption">Submarine</div>
+            </td>
+            <td>
+                <div class="img-container"><img src="MarbleMachine.png" alt="Marble Machine"></div>
+                <div class="caption">Harp</div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

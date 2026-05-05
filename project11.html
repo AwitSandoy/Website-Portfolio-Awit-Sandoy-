@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 11 - Awit Sandoy</title>
+    <style>
+        :root {
+            --light-orange: #FFCC80;
+            --deep-navy: #263238;
+            --soft-white: #F5F5F5;
+            --slate-blue: #546E7A;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--soft-white);
+            color: var(--deep-navy);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 4px solid var(--light-orange);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .loop-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            width: 320px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        .loop-card h2 {
+            margin-top: 0;
+            color: var(--slate-blue);
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 2px solid #f0f0f0;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--light-orange);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-show {
+            background-color: var(--light-orange);
+            color: var(--deep-navy);
+        }
+
+        .btn-clear {
+            background-color: var(--slate-blue);
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .output-area {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff9f0;
+            border-radius: 6px;
+            min-height: 100px;
+            max-height: 250px;
+            overflow-y: auto;
+            border-left: 5px solid var(--light-orange);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="loop-card">
+            <h2>For Loop</h2>
+            <div class="input-group">
+                <label>Enter number:</label>
+                <input type="number" id="forCount">
+            </div>
+            <div class="input-group">
+                <label>Enter text:</label>
+                <input type="text" id="forText">
+            </div>
+            <div class="button-group">
+                <button class="btn-show" onclick="runForLoop()">Show</button>
+                <button class="btn-clear" onclick="clearOutput('forOutput')">Clear</button>
+            </div>
+            <div class="output-area" id="forOutput"></div>
+        </div>
+
+        <div class="loop-card">
+            <h2>While Loop</h2>
+            <div class="input-group">
+                <label>Enter number:</label>
+                <input type="number" id="whileCount">
+            </div>
+            <div class="input-group">
+                <label>Enter text:</label>
+                <input type="text" id="whileText">
+            </div>
+            <div class="button-group">
+                <button class="btn-show" onclick="runWhileLoop()">Show</button>
+                <button class="btn-clear" onclick="clearOutput('whileOutput')">Clear</button>
+            </div>
+            <div class="output-area" id="whileOutput"></div>
+        </div>
+
+        <div class="loop-card">
+            <h2>Do-While Loop</h2>
+            <div class="input-group">
+                <label>Enter number:</label>
+                <input type="number" id="doWhileCount">
+            </div>
+            <div class="input-group">
+                <label>Enter text:</label>
+                <input type="text" id="doWhileText">
+            </div>
+            <div class="button-group">
+                <button class="btn-show" onclick="runDoWhileLoop()">Show</button>
+                <button class="btn-clear" onclick="clearOutput('doWhileOutput')">Clear</button>
+            </div>
+            <div class="output-area" id="doWhileOutput"></div>
+        </div>
+    </div>
+
+    <script src="loopLogic.js"></script>
+</body>
+</html>

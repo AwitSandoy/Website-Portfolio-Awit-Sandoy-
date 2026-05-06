@@ -222,6 +222,44 @@
             #home { flex-direction: column; text-align: center; }
             .section-title::after { left: 50%; transform: translateX(-50%); }
         }
+
+        footer {
+            background-color: #6495ED; /* Cornflower Blue to match your theme */
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif; /* Matching your typography */
+            margin-top: 50px;
+            border-top: 4px solid #FF7F50; /* Light Orange accent line */
+        }
+    
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+    
+        .footer-links {
+            margin: 15px 0;
+        }
+    
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+    
+        .footer-links a:hover {
+            color: #FF7F50; /* Hover effect using your accent color */
+        }
+    
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -419,5 +457,23 @@
             feedback.style.display = 'block';
         }
     </script>
+    
+    <footer>
+        <div class="footer-content">
+            <h3>Awit Sandoy</h3>
+            <p>Computer Science Student | Web Developer</p>
+            
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="https://github.com/AwitSandoy" target="_blank">GitHub</a>
+                <a href="mailto:your-email@example.com">Contact</a>
+            </div>
+    
+            <div class="copyright">
+                &copy; 2026 Awit Sandoy. All rights reserved.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
